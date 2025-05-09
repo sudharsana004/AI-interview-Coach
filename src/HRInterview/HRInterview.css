@@ -1,0 +1,248 @@
+.interview-root {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #0f172a;
+}
+
+.video-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.interviewer-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.interview-interface {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem;
+  box-sizing: border-box;
+  padding-bottom: 20px;
+}
+
+.question-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.question-box {
+  background: rgba(15, 23, 42, 0.75);
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.question-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.question-content h3 {
+  flex: 1;
+  margin: 0;
+  color: #ffffff;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.replay-button {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.replay-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.replay-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.response-area {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-top: 10px;
+}
+
+.another_new{
+  padding-top: 20px;
+}
+.new{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 900px;
+}
+
+.input-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.response-input {
+  width: 100%;
+  height: 100px;
+  padding: 1rem;
+  padding-right: 3rem;
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  resize: none;
+  backdrop-filter: blur(8px);
+}
+
+.response-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.response-input:focus {
+  outline: none;
+  border-color: #6366f1;
+}
+
+.mic-button {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mic-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.mic-button.listening {
+  background: rgba(239, 68, 68, 0.2);
+  animation: pulse 2s infinite;
+}
+
+.next-button {
+  display: block;
+  width: 200px;
+  margin: 1.5rem auto 0;
+  padding: 0.75rem 1.5rem;
+  background: #6366f1;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.next-button:hover {
+  background: #4f46e5;
+  transform: translateY(-1px);
+}
+
+.next-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.next-button.submitting {
+  background: #4f46e5;
+  opacity: 0.8;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(239, 68, 68, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+  }
+}
+
+@media (max-width: 768px) {
+  .interview-interface {
+    padding: 1rem;
+  }
+
+  .question-box {
+    padding: 1rem;
+  }
+
+  .question-content h3 {
+    font-size: 1rem;
+  }
+
+  .response-input {
+    height: 80px;
+  }
+
+  .next-button {
+    width: 100%;
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 480px) {
+  .interview-interface {
+    padding: 0.5rem;
+  }
+
+  .question-container {
+    padding-top: 1rem;
+  }
+
+  .question-box {
+    padding: 0.75rem;
+  }
+
+  .response-area {
+    padding: 0.5rem;
+  }
+}

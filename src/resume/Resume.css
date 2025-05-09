@@ -1,0 +1,205 @@
+.resume-container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  background-color: #f5f7fb;
+  overflow: hidden;
+}
+
+/* Left Section */
+.left-section {
+  width: 50%;
+  background-color: #00A8CC;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.title-page {
+  background-color: #003d66;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 1rem;
+  width: 80%;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+.interview-image {
+  max-width: 80%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.interview-image:hover {
+  transform: scale(1.05);
+}
+
+/* Right Section */
+.right-section {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #2E7C8D;
+  padding: 2rem;
+}
+
+.upload-title {
+  background-color: #419241;
+  color: white;
+  padding: 0.8rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Upload Box */
+.upload-container {
+  width: 80%;
+  max-width: 400px;
+  background-color: white;
+  border: 2px dashed #a5b4cb;
+  border-radius: 10px;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.upload-container.active {
+  border-color: #6366f1;
+  background-color: rgba(99, 102, 241, 0.1);
+}
+
+.upload-container.reject {
+  border-color: #ef4444;
+  background-color: rgba(239, 68, 68, 0.1);
+}
+
+.upload-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.upload-icon {
+  width: 40px;
+  height: 40px;
+  fill: #6366f1;
+  transition: transform 0.3s ease;
+}
+
+.upload-container:hover .upload-icon {
+  transform: scale(1.1);
+}
+
+.upload-subtitle {
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.browse-button {
+  background-color: #6366f1;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.browse-button:hover {
+  background-color: #4f46e5;
+}
+
+.file-type {
+  color: #6b7280;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+.upload-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.file-name {
+  color: #2d3436;
+  font-weight: 500;
+}
+
+.success-message {
+  color: #10b981;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .resume-container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .left-section, .right-section {
+    width: 100%;
+    padding: 1.5rem;
+  }
+
+  .title-page {
+    font-size: 1.2rem;
+    padding: 0.6rem;
+  }
+
+  .upload-title {
+    font-size: 1.3rem;
+  }
+
+  .upload-container {
+    max-width: 350px;
+    padding: 1.2rem;
+  }
+
+  .upload-icon {
+    width: 36px;
+    height: 36px;
+  }
+}
+/* Add these to Resume.css */
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #6366f1;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.upload-container.active {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
